@@ -13,6 +13,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "To-do list",
+      filename: "index.html",
+      inject: true,
     }),
   ],
   output: {
