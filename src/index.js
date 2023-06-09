@@ -2,6 +2,9 @@ import { Task } from "./Task.js";
 import { Tag } from "./Tag.js";
 import { Project } from "./Project.js";
 import { App } from "./App.js";
+import { viewLayer } from "./TwoColumnDiv.js";
+
+import "./style.css";
 
 const moment = require("moment");
 
@@ -15,8 +18,9 @@ function component() {
   myTask.addTag(new Tag("health", "white", "red", toDo));
 
   const element = document.createElement("div");
-  element.append(myTask.getTaskDetails().name);
-  element.append(myTask.tags);
+  const twoColumns = new viewLayer();
+
+  twoColumns.addToParent(element);
 
   return element;
 }

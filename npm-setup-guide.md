@@ -65,6 +65,14 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
 };
 ```
 
@@ -87,3 +95,13 @@ to install
 use the command  
 `npm run start`  
 to run the development server
+
+---
+
+## Loading CSS
+
+`npm install -D style-loader css-loader`
+
+in index.js import the css file
+
+`import './style.css';`
