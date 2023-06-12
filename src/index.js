@@ -17,12 +17,12 @@ function component() {
   myTask.addTag(new Tag("downtown", "green", "orange", toDo));
   myTask.addTag(new Tag("health", "white", "red", toDo));
 
-  const element = document.createElement("div");
-  const twoColumns = new viewLayer();
+  // const element = document.createElement("div");
+  // const twoColumns = new viewLayer();
 
-  twoColumns.addToParent(element);
+  // twoColumns.addToParent(element);
 
   return element;
 }
 
-document.body.appendChild(component());
+// document.body.appendChild(component());

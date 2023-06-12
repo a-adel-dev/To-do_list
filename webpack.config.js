@@ -14,11 +14,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "To-do list",
       filename: "index.html",
+      template: "./src/source.html",
       inject: true,
     }),
   ],
   output: {
-    filename: "[name].bundle.js",
+    filename: "main-[contenthash].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
@@ -31,6 +32,10 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
       },
     ],
   },

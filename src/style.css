@@ -10,10 +10,15 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-.two-column-container {
-  width: 100%;
+.app-container {
   height: 100vh;
   display: flex;
+  flex-direction: column;
+}
+.two-column-container {
+  width: 100%;
+  display: flex;
+  flex: 1;
 }
 
 .left-column {
