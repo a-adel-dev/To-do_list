@@ -61,7 +61,7 @@ module.exports = {
     }),
   ],
   output: {
-    filename: 'main.js',
+    filename: 'main-[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -70,6 +70,14 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },
@@ -105,3 +113,34 @@ to run the development server
 in index.js import the css file
 
 `import './style.css';`
+
+---
+
+## Cache busting
+
+`filename: 'main-[contenthash].js',`
+
+---
+
+## HTML loader
+
+`npm install --save-dev html-loader`
+
+main.js
+
+`import html from "./file.html";`
+
+webpack.config.js
+
+```
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+    ],
+  },
+};
+```
