@@ -6,15 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do list</title>
   </head>
-  <body>
-    <div class="app-container">
-      <div class="two-column-container">
-        <div class="left-column"></div>
-        <div class="right-column"></div>
+  <body class="flex flex-col h-screen">
+    <!-- app container -->
+    <div class="app-container flex-auto">
+      <!-- left col -->
+      <div class="left-col w-80 h-full p-10 bg-slate-50 drop-shadow-lg">
+        <!-- Tasks pane -->
+        <div class="main-tasks flex flex-col gap-2">
+          <div class="task flex justify-between">
+            <div class="task-tag flex gap-2">
+              <img src="./Today.svg" alt="" />
+              <h1 class="font-bold">Today</h1>
+            </div>
+            <p id="num-tasks-today">5</p>
+          </div>
+          <div class="task flex justify-between">
+            <div class="task-tag flex gap-2">
+              <img src="./upcoming.svg" alt="" />
+              <h1 class="font-bold">Upcoming</h1>
+            </div>
+            <p id="num-tasks-upcoming">5</p>
+          </div>
+          <div class="task flex justify-between">
+            <div class="task-tag flex gap-2">
+              <img src="./Priority.svg" alt="" />
+              <h1 class="font-bold">Priority</h1>
+            </div>
+            <p id="num-tasks-priority">5</p>
+          </div>
+        </div>
+
+        <!-- Projects pane -->
+        <div class="projects-pane mt-20 flex justify-between items-center">
+          <div class="projects-tag flex gap-2">
+            <button id="projects-unfold-button">
+              <img src="./arrow.svg" id="projects-arrow" alt="" />
+            </button>
+            <h1 class="font-bold">Projects</h1>
+          </div>
+          <button
+            class="font-bold text-slate-50 w-7 h-7 text-2xl bg-blue-400 rounded-full text-center p-0 leading-7"
+          >
+            +
+          </button>
+        </div>
       </div>
-      <footer>
-        <p>Developed by Ahmad Adel | <a href="#">source</a></p>
-      </footer>
+
+      <!-- right col -->
+      <div class="right-col"></div>
     </div>
+    <footer class="text-center p-2 bg-blue-400 z-10">
+      Developed by Ahmad Adel |
+      <a href="https://github.com/a-adel-dev/To-do_list">source</a>
+    </footer>
   </body>
 </html>

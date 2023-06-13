@@ -6,9 +6,9 @@ module.exports = {
   entry: {
     index: "./src/index.js",
   },
-  devtool: "inline-source-map",
+  devtool: "source-map",
   devServer: {
-    static: "./dist",
+    static: path.join(__dirname, "src"),
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -27,7 +27,8 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        include: path.resolve(__dirname, "src"),
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
