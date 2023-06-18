@@ -37,7 +37,7 @@
         </div>
 
         <!-- Projects pane -->
-        <div class="projects-pane mt-20 flex justify-between items-center">
+        <div class="projects-header mt-20 flex justify-between items-center">
           <div class="projects-tag flex gap-2">
             <button id="projects-unfold-button">
               <img src="./arrow.svg" id="projects-arrow" alt="" />
@@ -45,15 +45,58 @@
             <h1 class="font-bold">Projects</h1>
           </div>
           <button
-            class="font-bold text-slate-50 w-7 h-7 text-2xl bg-blue-400 rounded-full text-center p-0 leading-7"
+            class="font-bold text-slate-50 w-7 h-7 text-2xl bg-blue-400 rounded-full text-center p-0 leading-4 pb-1"
           >
             +
           </button>
         </div>
-      </div>
 
-      <!-- right col -->
-      <div class="right-col"></div>
+        <!-- Projects -->
+        <ul class="projects pt-3" id="projects-pane">
+          <!-- project  -->
+          <li class="project flex justify-between items-center px-3">
+            <div class="project-tag flex gap-3 items-center">
+              <!-- <div
+                class="colored-circle w-3 h-3 bg-blue-400 rounded-full"
+              ></div> -->
+              <button id="project-unfold-button">
+                <img src="./arrow.svg" id="project-arrow" alt="" />
+              </button>
+              <h1 class="font-bold">Personal</h1>
+            </div>
+            <p>5</p>
+          </li>
+          <!-- task list -->
+          <div class="tasks-pane pl-5 pb-3 pt-1">
+            <div class="task-tag flex pl-2 gap-3 items-baseline">
+              <div
+                class="colored-circle w-3 h-3 bg-blue-400 rounded-full"
+              ></div>
+              <h1>shopping</h1>
+            </div>
+
+            <div class="task-tag flex pl-2 gap-3 items-baseline">
+              <div
+                class="colored-circle w-3 h-3 bg-blue-400 rounded-full"
+              ></div>
+              <h1>shopping</h1>
+            </div>
+          </div>
+
+          <!-- project -->
+          <li class="project flex justify-between items-center px-3">
+            <div class="project-tag flex gap-3 items-center">
+              <button id="project-unfold-button">
+                <img src="./arrow.svg" id="project-arrow" alt="" />
+              </button>
+              <h1 class="font-bold">Work</h1>
+            </div>
+            <p>12</p>
+          </li>
+        </ul>
+        <!-- right col -->
+        <div class="right-col"></div>
+      </div>
     </div>
     <footer class="text-center p-2 bg-blue-400 z-10">
       Developed by Ahmad Adel |
