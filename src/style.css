@@ -48,3 +48,39 @@ body {
 .maintask h2 {
   font-size: 1rem;
 } */
+
+/* .right-col {
+  background: linear-gradient(
+      180deg,
+      rgba(154, 231, 255, 0.2) 0%,
+      rgba(1, 28, 36, 0.2) 100%
+    ),
+    #c7c7c7;
+} */
+
+.right-col {
+  background: linear-gradient(
+      180deg,
+      rgba(154, 231, 255, 0.2) 0%,
+      rgba(1, 28, 36, 0.2) 100%
+    ),
+    #c7c7c7;
+  overflow: hidden;
+  background-size: cover;
+  position: relative;
+}
+
+.right-col::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  bottom: -100px;
+  right: -100px;
+  background-image: url("./task.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* border: 2px solid red; */
+  transform: rotate(-30deg);
+  opacity: 0.1;
+}
