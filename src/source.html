@@ -12,7 +12,7 @@
       <!-- left col -->
       <div class="left-col w-80 h-full p-10 bg-slate-50 drop-shadow-lg">
         <!-- Tasks pane -->
-        <div class="main-tasks flex flex-col gap-2">
+        <div class="main-tasks flex flex-col gap-2 pt-16">
           <div class="task flex justify-between">
             <div class="task-tag flex gap-2">
               <img src="./Today.svg" alt="" />
@@ -96,9 +96,107 @@
         </ul>
         <!-- right col -->
       </div>
-      <div class="right-col h-full w-full"></div>
+      <div class="right-col h-full w-full">
+        <!-- task view -->
+        <div class="task-view p-28 max-w-6xl">
+          <div class="task-view-header flex justify-between">
+            <h1 class="today font-extrabold text-4xl">Today</h1>
+            <h1 class="today-date font-extrabold text-2xl">
+              Monday, October 12th, 2025
+            </h1>
+          </div>
+          <form
+            class="task-panel max-w-6xl rounded-lg bg-slate-100 p-5 mt-10 z-10 bg-none"
+          >
+            <div class="task-title flex gap-2 items-center">
+              <input
+                type="checkbox"
+                name="finish-task"
+                id="finish-task"
+                class="w-8 h-8 bg-slate-400 rounded"
+              />
+              <label for="finish-task" class="text-2xl font-bold">
+                Prepare the quarterly report</label
+              >
+            </div>
+            <h2 class="task-created font-light text-right italic">
+              created at: Thursday, Novemeber 12th, 2023
+            </h2>
+            <textarea
+              name="task-description"
+              id="task-description"
+              class="w-full h-28 p-5 mt-4"
+              contenteditable
+            ></textarea>
+            <div class="tag-drawer flex gap-2 py-2">
+              <div
+                class="tag cursor-pointer bg-orange-500 rounded p-1 px-2 text-sm"
+              >
+                priority
+              </div>
+              <div
+                class="tag cursor-pointer bg-green-500 rounded p-1 px-2 text-sm"
+              >
+                Work
+              </div>
+              <div
+                class="tag cursor-pointer bg-indigo-500 rounded p-1 px-2 text-sm"
+              >
+                PowerPoint
+              </div>
+              <div
+                class="tag cursor-pointer bg-accent rounded p-1 px-2 text-sm"
+              >
+                + Add tag
+              </div>
+            </div>
+            <div class="task-duedate-container flex gap-2 mt-4 items-center">
+              <label for="task-due" class="flex-shrink-0 font-semibold">
+                Due Date</label
+              >
+              <input
+                type="date"
+                name="due-date"
+                id="task-due"
+                class="w-full p-1"
+              />
+            </div>
+            <div
+              class="task-action-buttons flex justify-between mt-8 items-center"
+            >
+              <div class="priority-continer flex gap-2 items-center">
+                <input
+                  type="checkbox"
+                  name="priority"
+                  id="priority-task"
+                  class="w-4 h-4 bg-slate-400 rounded"
+                />
+                <label for="priority-task"> Priority task</label>
+              </div>
+              <button
+                class="px-3 py-1 bg-accent rounded text-slate-100 font-semibold w-28"
+              >
+                Delete
+              </button>
+              <button
+                type="submit"
+                class="px-3 py-1 bg-accent rounded text-slate-100 font-semibold w-28"
+              >
+                Apply
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- filtered view -->
+        <!-- view filtered based on a date/priority/tag/project -->
+        <div class="filtered-view"></div>
+
+        <!-- calendar view -->
+        <div class="calendar-view"></div>
+      </div>
     </div>
-    <footer class="text-center p-2 bg-blue-400 z-10">
+    <footer class="text-center p-2 bg-blue-400">
       Developed by Ahmad Adel |
       <a href="https://github.com/a-adel-dev/To-do_list">source</a>
     </footer>
