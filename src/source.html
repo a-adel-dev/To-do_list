@@ -98,13 +98,10 @@
       </div>
       <div class="right-col h-full w-full">
         <!-- task view -->
-        <div class="task-view p-28 max-w-6xl">
-          <div class="task-view-header flex justify-between">
-            <h1 class="today font-extrabold text-4xl">Today</h1>
-            <h1 class="today-date font-extrabold text-2xl">
-              Monday, October 12th, 2025
-            </h1>
-          </div>
+        <div class="task-view p-28 max-w-6xl hidden">
+          <h1 class="today-date font-extrabold text-2xl text-right">
+            Monday, October 12th, 2025
+          </h1>
           <form
             class="task-panel max-w-6xl rounded-lg bg-slate-100 p-5 mt-10 z-10 bg-none"
           >
@@ -190,12 +187,104 @@
 
         <!-- filtered view -->
         <!-- view filtered based on a date/priority/tag/project -->
-        <div class="filtered-view"></div>
+        <div class="filtered-view p-28 max-w-6xl">
+          <div class="filtered-view-header flex justify-between">
+            <h1 class="filtered-view-title text-2xl font-extrabold">Today</h1>
+            <h1 class="today-date font-extrabold text-2xl">
+              Monday, October 12th, 2025
+            </h1>
+          </div>
+          <div class="filtered-tasks-cards flex flex-col gap-3 mt-4">
+            <div
+              class="task-card bg-slate-200 rounded-lg relative px-4 py-2 overflow-hidden"
+            >
+              <input type="checkbox" name="task-complete" id="task-complete" />
+              <label
+                for="task-complete"
+                class="task-title font-semibold text-lg"
+                >Prepare the quarterly report</label
+              >
+              <div class="tag-drawer flex gap-2 py-2">
+                <div
+                  class="tag cursor-pointer bg-orange-500 rounded p-1 px-2 text-sm"
+                >
+                  priority
+                </div>
+                <div
+                  class="tag cursor-pointer bg-green-500 rounded p-1 px-2 text-sm"
+                >
+                  Work
+                </div>
+                <div
+                  class="tag cursor-pointer bg-indigo-500 rounded p-1 px-2 text-sm"
+                >
+                  PowerPoint
+                </div>
+                <div
+                  class="tag cursor-pointer bg-accent rounded p-1 px-2 text-sm"
+                >
+                  + Add tag
+                </div>
+              </div>
+              <button
+                class="delete-task-button absolute w-16 h-full bg-orange-700 right-0 top-0 font-extrabold text-4xl text-gray-50"
+              >
+                X
+              </button>
+            </div>
+
+            <div
+              class="task-card bg-slate-200 rounded-lg relative px-4 py-2 overflow-hidden"
+            >
+              <input type="checkbox" name="task-complete" id="task-complete" />
+              <label
+                for="task-complete"
+                class="task-title font-semibold text-lg"
+                >Set aside time for exercise or physical activity, such as going
+                for a run or attending a fitness class. or not, you can do what
+                you want</label
+              >
+              <div class="tag-drawer flex gap-2 py-2">
+                <div
+                  class="tag cursor-pointer bg-orange-500 rounded p-1 px-2 text-sm"
+                >
+                  priority
+                </div>
+                <div
+                  class="tag cursor-pointer bg-green-500 rounded p-1 px-2 text-sm"
+                >
+                  Work
+                </div>
+                <div
+                  class="tag cursor-pointer bg-indigo-500 rounded p-1 px-2 text-sm"
+                >
+                  PowerPoint
+                </div>
+                <div
+                  class="tag cursor-pointer bg-accent rounded p-1 px-2 text-sm"
+                >
+                  + Add tag
+                </div>
+              </div>
+              <button
+                class="delete-task-button absolute w-16 h-full bg-orange-700 opacity-60 right-0 top-0 font-extrabold text-4xl text-gray-50"
+              >
+                X
+              </button>
+            </div>
+          </div>
+        </div>
 
         <!-- calendar view -->
         <div class="calendar-view"></div>
       </div>
     </div>
+    <!-- add task modal -->
+    <div class="add-task-modal"></div>
+    <!-- select tag modal -->
+    <div class="select-tag-modal"></div>
+    <!-- add tag modal -->
+    <div class="add-tag-modal"></div>
     <footer class="text-center p-2 bg-blue-400">
       Developed by Ahmad Adel |
       <a href="https://github.com/a-adel-dev/To-do_list">source</a>
