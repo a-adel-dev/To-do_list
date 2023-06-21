@@ -19,6 +19,7 @@ module.exports = {
       orange: colors.orange,
       slate: colors.slate,
       blue: colors.blue,
+      red: colors.red,
       accent: "#0C788F",
     },
     extend: {
