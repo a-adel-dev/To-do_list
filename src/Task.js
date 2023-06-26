@@ -43,7 +43,7 @@ export class Task {
     return this._dueDate;
   }
 
-  set dueDate(dueDate) {
+  setDueDate(dueDate) {
     this._dueDate = moment(dueDate);
   }
 

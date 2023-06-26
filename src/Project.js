@@ -1,3 +1,5 @@
+const moment = require("moment");
+
 export class Project {
   constructor(name, app) {
     this.name = name;
@@ -13,11 +15,6 @@ export class Project {
     this.name = name;
     this.taskList = [];
   }
-
-  //   deleteProject() {
-  //     // Perform any necessary cleanup or deletion related to the project
-  //     // and remove it from memory
-  //   }
 
   addTask(task) {
     this.taskList.push(task);
@@ -40,5 +37,21 @@ export class Project {
 
   getCompletedTaskCount() {
     return this.taskList.filter((task) => task.isFinished).length;
+  }
+
+  getTasksByDate(date) {
+    return this.taskList.filter((task) => {
+      const taskDueDate = task.dueDate;
+      return (
+        date.diff(taskDueDate, "days") < 1 &&
+        date.diff(taskDueDate, "days") >= 0
+      );
+    });
+  }
+
+  getTasksByDateRange(date, otherDate) {
+    return this.taskList.filter((task) => {
+      return task.dueDate.isBetween(date, otherDate, null, "[]");
+    });
   }
 }
