@@ -14,8 +14,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "To-do list",
       filename: "index.html",
-      template: "./src/source.html",
-      inject: true,
+      // template: "./src/source.html",
+      // inject: true,
     }),
   ],
   output: {
