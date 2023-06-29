@@ -4,60 +4,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-}
-
-.app-container {
-  height: 100vh;
-}
-.two-column-container {
-  width: 100%;
-  display: flex;
-  flex: 1;
-}
-
-.left-column {
-  width: 360px;
-  padding: 2rem;
-}
-
-.right-column {
-  flex: 1;
-  padding: 2rem;
-}
-
-.maintask {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.maintask-tag {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.maintask h2 {
-  font-size: 1rem;
-} */
-
-/* .right-col {
-  background-image: linear-gradient(
-      180deg,
-      rgba(154, 231, 255, 0.2) 0%,
-      rgba(1, 28, 36, 0.2) 100%
-    ),
-    #c7c7c7;
-} */
-
 .right-col {
   background: linear-gradient(
       180deg,

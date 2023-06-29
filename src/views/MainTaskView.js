@@ -18,15 +18,29 @@ export function MainTaskView(App) {
 
   const today = mainTasks.children[0];
   const todaysTasks = App.getTodaysTasks.bind(App);
-  MainTaskTagComponent(today, todaySVG, "Today", todaysTasks);
+  MainTaskTagComponent(App, today, todaySVG, "Today", todaysTasks, "today");
 
   const priority = mainTasks.children[1];
   const priorityTasks = App.getPriorityTasks.bind(App);
-  MainTaskTagComponent(priority, prioritySVG, "Priority Tasks", priorityTasks);
+  MainTaskTagComponent(
+    App,
+    priority,
+    prioritySVG,
+    "Priority Tasks",
+    priorityTasks,
+    "priority"
+  );
 
   const upcoming = mainTasks.children[2];
   const upcomingTasks = App.getUpcomingTasks.bind(App);
-  MainTaskTagComponent(upcoming, upcomingSVG, "Upcoming Tasks", upcomingTasks);
+  MainTaskTagComponent(
+    App,
+    upcoming,
+    upcomingSVG,
+    "Upcoming Tasks",
+    upcomingTasks,
+    "calendar"
+  );
 
   return mainTasks;
 }

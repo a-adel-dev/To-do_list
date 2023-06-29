@@ -4,32 +4,34 @@ import { Project } from "./Project.js";
 import { App } from "./App.js";
 import { generateCalendar } from "./calendar.js";
 import { ASide } from "./views/ASide.js";
+import { RenderApp } from "./views/RenderApp.js";
 
 import "./style.css";
 
 const moment = require("moment");
 
-function component(App) {
-  const appView = document.createElement("div");
-  appView.classList.add("flex", "h-full");
+// function component(App) {
+//   const appView = document.createElement("div");
+//   appView.classList.add("flex", "h-full");
 
-  appView.appendChild(ASide(App));
+//   appView.appendChild(ASide(App));
 
-  //create and append right col
+//   //create and append right col
 
-  return appView;
-}
+//   return appView;
+// }
 
-function refreshPage(App) {
-  document.body.innerHTML = "";
-  document.body.appendChild(component(App));
-}
+// function refreshPage(App) {
+//   document.body.innerHTML = "";
+//   document.body.appendChild(component(App));
+// }
 
 const toDo = new App();
 const personal = new Project("Personal", toDo);
+const bla = new Project("bla", toDo);
 
 let myTask = new Task("visit the doctor", personal);
-myTask.setDueDate("2023-06-26");
+myTask.setDueDate("2023-07-05");
 
 myTask.addTag(new Tag("downtown", "green", "orange", toDo));
 myTask.addTag(new Tag("health", "white", "red", toDo));
@@ -43,8 +45,11 @@ myotherTask.addTag(new Tag("downtown", "green", "orange", toDo));
 myotherTask.addTag(new Tag("health", "white", "red", toDo));
 
 document.body.classList.add("flex", "flex-col", "h-screen");
-refreshPage(toDo);
-console.log(toDo.getUpcomingTasks(7));
+
+const defaultContent = document.createElement("div");
+defaultContent.innerHTML = "default content";
+RenderApp(toDo, "defaultContent");
+console.log(toDo.contentFilter);
 
 // console.log(toDo.getTodaysTasks().length.toString());
 // console.log(myTask.dueDate.toString());

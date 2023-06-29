@@ -10,8 +10,20 @@ export class App {
 
     this.projectList = [];
     this.tagList = [];
+    this.contentFilter = "default";
+    this.projectsExpanded = false;
+    this.newProjectDialoge = false;
 
     return this;
+  }
+
+  setFilter(filter) {
+    console.log("setting filter to " + filter);
+    this.contentFilter = filter;
+  }
+
+  getFilter() {
+    return this.contentFilter;
   }
 
   addProject(project) {

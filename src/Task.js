@@ -13,6 +13,7 @@ export class Task {
     this._dueDate = null;
     this._priority = false;
     this._isFinished = false;
+    this._color = "#999";
   }
 
   get description() {
@@ -61,6 +62,14 @@ export class Task {
 
   set isFinished(isFinished) {
     this._isFinished = isFinished;
+  }
+
+  get color() {
+    return this._color;
+  }
+
+  set color(color) {
+    this._color = color;
   }
 
   addTag(tag) {

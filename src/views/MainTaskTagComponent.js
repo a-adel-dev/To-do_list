@@ -1,4 +1,8 @@
-export function MainTaskTagComponent(parent, img, text, func) {
+import { RenderApp } from "./RenderApp";
+import { ContentView } from "./ContentView";
+import { FilteredTasksView } from "./FilteredTasksView.Js";
+
+export function MainTaskTagComponent(App, parent, img, text, func, filter) {
   const element = document.createElement("div");
   element.classList.add("flex", "gap-2");
   parent.appendChild(element);
@@ -12,8 +16,11 @@ export function MainTaskTagComponent(parent, img, text, func) {
   title.innerHTML = text;
   element.appendChild(title);
 
-  const numTodaysTasks = document.createElement("a");
-  numTodaysTasks.href = "#"; //filterbydate()
+  const numTodaysTasks = document.createElement("button");
+
+  numTodaysTasks.addEventListener("click", () => {
+    RenderApp(App, filter);
+  });
   numTodaysTasks.innerHTML = func().length.toString();
   parent.appendChild(numTodaysTasks);
 }

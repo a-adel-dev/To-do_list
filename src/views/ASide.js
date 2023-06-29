@@ -1,4 +1,6 @@
 import { MainTaskView } from "./MainTaskView";
+import { ProjectComponent } from "./ProjectComponent";
+import { SideTaskComponent } from "./sideTaskComponent";
 
 export function ASide(App) {
   const element = document.createElement("div");
@@ -14,6 +16,13 @@ export function ASide(App) {
   element.classList.add(...classList);
 
   element.appendChild(MainTaskView(App));
+  // const func = () => {};
+  // element.appendChild(
+  //   SideTaskComponent(App.getProjectList()[0].taskList[0]),
+  //   func
+  // );
+
+  element.appendChild(ProjectComponent(App));
 
   return element;
 }
