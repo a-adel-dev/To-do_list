@@ -5,6 +5,7 @@ export class Project {
     this.name = name;
     this.taskList = [];
     this.addToApp(app);
+    this.taskListExpanded = false;
   }
 
   addToApp(app) {

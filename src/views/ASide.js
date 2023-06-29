@@ -1,5 +1,6 @@
 import { MainTaskView } from "./MainTaskView";
-import { ProjectComponent } from "./ProjectComponent";
+import { ProjectsComponent } from "./ProjectComponent";
+import { ProjectSideComponent } from "./ProjectSideComonent";
 import { SideTaskComponent } from "./sideTaskComponent";
 
 export function ASide(App) {
@@ -16,13 +17,14 @@ export function ASide(App) {
   element.classList.add(...classList);
 
   element.appendChild(MainTaskView(App));
-  // const func = () => {};
-  // element.appendChild(
-  //   SideTaskComponent(App.getProjectList()[0].taskList[0]),
-  //   func
-  // );
 
-  element.appendChild(ProjectComponent(App));
+  element.appendChild(ProjectsComponent(App));
+
+  if (App.projectsExpanded) {
+    App.projectList.forEach((project) => {
+      element.appendChild(ProjectSideComponent(App, project));
+    });
+  }
 
   return element;
 }

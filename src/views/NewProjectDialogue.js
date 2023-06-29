@@ -4,22 +4,6 @@ import { Project } from "../Project";
 export function NewProjectDialoge(App) {
   const element = document.createElement("div");
 
-  element.classList.add(
-    "w-full",
-    "h-full",
-    "flex",
-    "justify-center",
-    "items-center",
-    "absolute",
-    "top-0",
-    "left-0",
-    "bg-black",
-    "bg-opacity-75"
-  );
-
-  const dialoge = document.createElement("div");
-  dialoge.classList.add("w-2/5", "p-8", "bg-slate-200", "rounded-lg");
-
   const form = document.createElement("form");
   const group = document.createElement("div");
 
@@ -44,10 +28,20 @@ export function NewProjectDialoge(App) {
     "block"
   );
 
-  submit.addEventListener("click", () => {
-    var newProject = new Project(input.value, App);
-    App.NewProjectDialoge = false;
-    RenderApp(App, App.getFilter());
+  submit.type = "button";
+
+  submit.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (input.value.trim() != "") {
+      console.log("name");
+      var newProject = new Project(input.value, App);
+      App.newProjectDialoge = false;
+      RenderApp(App, App.getFilter());
+    } else {
+      input.placeholder = "enter valid name...";
+      input.classList.add("border-solid", "border", "border-red-500");
+      console.log(e);
+    }
   });
 
   group.appendChild(label);
@@ -55,8 +49,8 @@ export function NewProjectDialoge(App) {
   group.appendChild(input);
   form.appendChild(group);
   form.appendChild(submit);
-  dialoge.appendChild(form);
-  element.appendChild(dialoge);
+
+  element.appendChild(form);
 
   return element;
 }

@@ -15,10 +15,9 @@
 }
 
 import arrowSVG from "../img/arrow.svg";
-import { NewProjectDialoge } from "./NewProjectDialogue";
 import { RenderApp } from "./RenderApp";
 
-export function ProjectComponent(App) {
+export function ProjectsComponent(App) {
   const element = document.createElement("div");
   element.classList.add("mt-20", "flex", "justify-between", "items-center");
 
@@ -35,6 +34,12 @@ export function ProjectComponent(App) {
   } else {
     Icon.style.transform = "rotate(0deg)";
   }
+
+  unfoldButton.addEventListener("click", () => {
+    //expand projects
+    App.projectsExpanded = !App.projectsExpanded;
+    RenderApp(App, App.getFilter());
+  });
 
   projectTag.appendChild(unfoldButton);
 
@@ -66,8 +71,8 @@ export function ProjectComponent(App) {
   );
   addProjectButton.innerHTML = "+";
 
-  addProjectButton.addEventListener("click", () => {
-    App.NewProjectDialoge = true;
+  addProjectButton.addEventListener("click", (e) => {
+    App.newProjectDialoge = true;
     RenderApp(App, App.getFilter());
   });
 

@@ -13,6 +13,8 @@ export class App {
     this.contentFilter = "default";
     this.projectsExpanded = false;
     this.newProjectDialoge = false;
+    this.NewTaskDialoge = false;
+    this.currentProject = null;
 
     return this;
   }

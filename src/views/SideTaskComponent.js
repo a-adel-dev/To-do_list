@@ -7,7 +7,7 @@ export function SideTaskComponent(task, func) {
   //         </div>
 
   const element = document.createElement("div");
-  element.classList.add("flex", "pl-2", "gap-3", "items-baseline");
+  element.classList.add("flex", "pl-2", "gap-3", "items-baseline", "ml-3");
 
   const circle = document.createElement("div");
   circle.classList.add("w-3", "h-3", "rounded-full");
