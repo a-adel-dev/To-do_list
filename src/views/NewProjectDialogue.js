@@ -17,7 +17,7 @@ export function NewProjectDialoge(App) {
   label.classList.add("flex-shrink-0");
 
   const submit = document.createElement("button");
-  submit.innerHTML = "New Project";
+  submit.innerHTML = "Add Project";
   submit.classList.add(
     "bg-accent",
     "text-white",

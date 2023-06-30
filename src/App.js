@@ -10,17 +10,18 @@ export class App {
 
     this.projectList = [];
     this.tagList = [];
-    this.contentFilter = "default";
+    this.contentFilter = "today";
     this.projectsExpanded = false;
     this.newProjectDialoge = false;
     this.NewTaskDialoge = false;
     this.currentProject = null;
+    this.currentTask = null;
+    this.taskView = false;
 
     return this;
   }
 
   setFilter(filter) {
-    console.log("setting filter to " + filter);
     this.contentFilter = filter;
   }
 

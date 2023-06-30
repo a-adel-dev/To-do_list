@@ -53,6 +53,8 @@ export function ProjectSideComponent(App, project) {
 
   addProjectButton.addEventListener("click", () => {
     App.newTaskDialoge = true;
+    App.currentProject = project;
+    console.log("setting current project to " + project.name);
     RenderApp(App, App.getFilter());
   });
 
@@ -61,7 +63,13 @@ export function ProjectSideComponent(App, project) {
   element.appendChild(projectSideTag);
   if (project.taskListExpanded === true) {
     project.taskList.forEach((task) => {
-      element.appendChild(SideTaskComponent(task, () => {}));
+      element.appendChild(
+        SideTaskComponent(task, () => {
+          App.currentTask = task;
+          App.taskView = true;
+          RenderApp(App, App.getFilter());
+        })
+      );
     });
   }
 

@@ -25,8 +25,40 @@ function component(App) {
   return appView;
 }
 
+function createHeader() {
+  const header = document.createElement("header");
+  header.classList.add("p-12", "bg-blue-500", "text-white");
+
+  const heading = document.createElement("h1");
+  heading.textContent = "My To-Do List";
+  heading.classList.add("text-2xl", "font-bold", "mb-2");
+  header.appendChild(heading);
+
+  return header;
+}
+
+function createFooter() {
+  const footer = document.createElement("footer");
+  footer.classList.add("text-center", "p-2", "bg-blue-400");
+
+  const textNode1 = document.createTextNode("Developed by Ahmad Adel | ");
+  footer.appendChild(textNode1);
+
+  const link = document.createElement("a");
+  link.href = "https://github.com/a-adel-dev/To-do_list";
+  link.textContent = "source";
+  footer.appendChild(link);
+
+  return footer;
+}
+
 export function RenderApp(App, filter) {
   document.body.innerHTML = "";
+  document.body.appendChild(createHeader());
   App.setFilter(filter);
   document.body.appendChild(component(App));
+  document.body.appendChild(createFooter());
+
+  const serializedData = JSON.stringify(App);
+  localStorage.setItem("appData", serializedData);
 }

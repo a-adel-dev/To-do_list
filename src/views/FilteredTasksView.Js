@@ -1,22 +1,28 @@
+import { FilteredToday } from "./FilteredToday";
+import { FilteredPriority } from "./FilteredPriority";
+import { FilteredUpcoming } from "./FilteredUpcoming";
+
 export function FilteredTasksView(App) {
   const element = document.createElement("div");
+
+  element.classList.add("w-full", "filtered-task-view");
 
   switch (App.getFilter()) {
     case "today":
       element.innerHTML = "";
-      element.innerHTML = App.getFilter() + " todays tasks";
+      element.appendChild(FilteredToday(App));
       break;
     case "priority":
       element.innerHTML = "";
-      element.innerHTML = App.getFilter() + " priority tasks";
+      element.appendChild(FilteredPriority(App));
       break;
     case "calendar":
       element.innerHTML = "";
-      element.innerHTML = App.getFilter() + " calendar";
+      element.appendChild(FilteredUpcoming(App));
       break;
     default:
       element.innerHTML = "";
-      element.innerHTML = App.getFilter() + " default content";
+      element.appendChild(FilteredToday(App));
   }
 
   return element;

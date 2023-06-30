@@ -1,6 +1,4 @@
 import { RenderApp } from "./RenderApp";
-import { ContentView } from "./ContentView";
-import { FilteredTasksView } from "./FilteredTasksView.Js";
 
 export function MainTaskTagComponent(App, parent, img, text, func, filter) {
   const element = document.createElement("div");
@@ -12,9 +10,13 @@ export function MainTaskTagComponent(App, parent, img, text, func, filter) {
   element.appendChild(Icon);
 
   const title = document.createElement("h1");
-  title.classList.add("font-bold");
+  title.classList.add("font-bold", "cursor-pointer");
   title.innerHTML = text;
   element.appendChild(title);
+
+  title.addEventListener("click", () => {
+    RenderApp(App, filter);
+  });
 
   const numTodaysTasks = document.createElement("button");
 

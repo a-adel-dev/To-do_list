@@ -1,9 +1,10 @@
+import moment from "moment";
 import { RenderApp } from "./RenderApp";
 
 export function Dialoge(App, content) {
   content.classList.add("mt-12");
 
-  const element = document.createElement("div");
+  const element = document.createElement("div", "Dialoge");
 
   element.classList.add(
     "w-full",

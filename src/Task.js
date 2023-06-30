@@ -5,15 +5,15 @@ import { Project } from "./Project.js";
 export class Task {
   constructor(name, project) {
     this.name = name;
-    this.project = project;
-    this.addToProject();
+    // this.project = project;
+    this.addToProject(project);
     this._description = "";
     this._tags = [];
     this._creationDate = moment();
     this._dueDate = null;
     this._priority = false;
     this._isFinished = false;
-    this._color = "#999";
+    this._color = "#999999";
   }
 
   get description() {
@@ -76,31 +76,11 @@ export class Task {
     this.tags.push(tag);
   }
 
-  addToProject() {
-    if (this.project instanceof Project) {
-      this.project.addTask(this);
-    }
+  addToProject(project) {
+    project.addTask(this);
   }
 
   finishTask() {
     this.isFinished = true;
-  }
-
-  deleteTask() {
-    if (this.project instanceof Project) {
-      this.project.removeTask(this);
-    }
-  }
-
-  getTaskDetails() {
-    return {
-      name: this.name,
-      description: this.description,
-      tags: this.tags,
-      creationDate: this.creationDate,
-      dueDate: this.dueDate,
-      priority: this.priority,
-      isFinished: this.isFinished,
-    };
   }
 }

@@ -28,6 +28,9 @@ module.exports = {
         "screen-small": ["100vh", "100svh"],
         "screen-large": ["100vh", "100lvh"],
       },
+      spacing: {
+        400: "55rem",
+      },
     },
   },
   plugins: [],
