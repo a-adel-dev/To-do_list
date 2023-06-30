@@ -1,7 +1,6 @@
 import { MainTaskView } from "./MainTaskView";
 import { ProjectsComponent } from "./ProjectComponent";
 import { ProjectSideComponent } from "./ProjectSideComonent";
-import { SideTaskComponent } from "./sideTaskComponent";
 
 export function ASide(App) {
   const element = document.createElement("div");
