@@ -1,4 +1,4 @@
-import todaySVG from "../img/Today.svg";
+import todaySVG from "../img/today.svg";
 import prioritySVG from "../img/priority.svg";
 import upcomingSVG from "../img/upcoming.svg";
 

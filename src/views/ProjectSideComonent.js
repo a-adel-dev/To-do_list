@@ -1,6 +1,6 @@
 import arrowSVG from "../img/arrow.svg";
 import { RenderApp } from "./RenderApp";
-import { SideTaskComponent } from "./sideTaskComponent";
+import { SideTaskComponent } from "./SideTaskComponent";
 
 export function ProjectSideComponent(App, project) {
   const element = document.createElement("div");
